@@ -14,7 +14,14 @@ pio run -t upload -d Transmitter/Code
 pio run -t upload -d Receiver/Code
 ```
 
+The Transmitter also has an `esp32dev-ota` environment for updating it wirelessly over WiFi, once it's already flashed and connected:
+
+```bash
+pio run -t upload -e esp32dev-ota -d Transmitter/Code
+```
+
 ## Status
 
 - IR transmit/receive: working.
+- OTA firmware updates (Transmitter): working.
 - Alexa voice control: planned (not yet implemented).

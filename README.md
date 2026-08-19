@@ -20,6 +20,20 @@ The Transmitter also has an `esp32dev-ota` environment for updating it wirelessl
 pio run -t upload -e esp32dev-ota -d Transmitter/Code
 ```
 
+## Alexa voice control (planned)
+
+Since fauxmoESP only supports on/off switches (no custom phrases), each IR command will be exposed as its own "device" — saying "turn on" it fires that command once. "Turn off" isn't meaningful for these momentary button presses, so it's ignored.
+
+| Voice phrase | Fan action |
+|---|---|
+| "Alexa, turn on Power" | Power |
+| "Alexa, turn on Swing" | Swing |
+| "Alexa, turn on Fan Mode" | Mode |
+| "Alexa, turn on Speed Up" | Speed + |
+| "Alexa, turn on Speed Down" | Speed - |
+| "Alexa, turn on Timer" | Timer |
+| "Alexa, turn on Lock" | Lock |
+
 ## Status
 
 - IR transmit/receive: working.

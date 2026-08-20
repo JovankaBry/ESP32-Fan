@@ -19,6 +19,8 @@ void alexaInit() {
     fauxmo.addDevice("Lock");
 
     fauxmo.onSetState([](unsigned char device_id, const char* device_name, bool state, unsigned char value) {
+        Serial.printf("[Alexa] device= %s state=%s state=%d\n", device_name, state);
+
         if (!state) return; // "turn off" is meaningless for a momentary button press
 
         if (strcmp(device_name, "Power") == 0) sendCode(powerRaw, "Power");
@@ -29,6 +31,7 @@ void alexaInit() {
         else if (strcmp(device_name, "Timer") == 0) sendCode(timerRaw, "Timer");
         else if (strcmp(device_name, "Lock") == 0) sendCode(lockRaw, "Lock");
     });
+    Serial.println("[Alexa] fauxmo initialized, 7 devices registered");
 }
 
 void alexaHandle() {

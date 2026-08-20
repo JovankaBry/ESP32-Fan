@@ -60,3 +60,8 @@ void otaInit() {
 void otaHandler() {
     ArduinoOTA.handle();
 }
+
+void mac() {
+    Serial.print("MAC Address: ");
+    Serial.println(WiFi.macAddress());
+}

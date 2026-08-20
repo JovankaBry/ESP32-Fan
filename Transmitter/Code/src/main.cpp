@@ -5,6 +5,7 @@
 
 void setup() {
   Serial.begin(115200);
+  mac(); // Print MAC Address
   otaInit(); // OTA Initialization
   alexaInit(); // Alexa Initialization
   txinit(); // Transmitter Initialization

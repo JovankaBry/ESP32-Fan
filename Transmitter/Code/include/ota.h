@@ -2,3 +2,4 @@
 
 void otaInit();
 void otaHandler();
+void mac();

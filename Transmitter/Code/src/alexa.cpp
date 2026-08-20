@@ -19,7 +19,7 @@ void alexaInit() {
     fauxmo.addDevice("Lock");
 
     fauxmo.onSetState([](unsigned char device_id, const char* device_name, bool state, unsigned char value) {
-        Serial.printf("[Alexa] device= %s state=%s state=%d\n", device_name, state);
+        Serial.printf("[Alexa] device=%s state=%d\n", device_name, state);
 
         if (!state) return; // "turn off" is meaningless for a momentary button press
 
